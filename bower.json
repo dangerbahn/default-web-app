@@ -1,0 +1,8 @@
+{
+  "name": "default-ember-app",
+  "dependencies": {
+    "ember": "~2.8.0",
+    "ember-cli-shims": "0.1.1",
+    "urijs": "^1.18.2"
+  }
+}

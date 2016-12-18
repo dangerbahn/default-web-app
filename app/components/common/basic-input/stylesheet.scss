@@ -1,0 +1,97 @@
+/*********************************************************************
+                        Mobile First Component Styles (< 480px)
+********************************************************************/
+.basicInput {
+  width: 100%;
+}
+.basicInput--inputContainer {
+  position: relative;
+}
+.basicInput--label {
+  color: #333;
+  display: inline-block;
+  position: absolute;
+  font-size: 0.875em;
+  line-height: 1.4286;
+  padding: 0 0.214285714em;
+  margin-left: 0.714285714em;
+  -webkit-transform: translate3D(0, 8px, 0);
+  transform: translate3D(0, 8px, 0);
+  backface-visibility: hidden;
+  -webkit-transition: font-size 200ms ease-out, -webkit-transform 200ms ease-out;
+  transition: font-size 200ms ease-out, transform 200ms ease-out;
+  background: #fff;
+}
+.basicInput--input {
+  width: 100%;
+  border: 1px solid #333;
+  padding: 0.625em;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+  height: 2.4375em;
+  background: #fff;
+  outline: none;
+}
+
+.basicInput-hasFocus .basicInput--input {
+  border-color: #333;
+}
+
+.basicInput-hasValue .basicInput--label,
+.basicInput-hasFocus .basicInput--label {
+  font-size: 0.75em;
+  padding: 0 0.25em;
+  margin-left: 0.833333333em;
+  -webkit-transform: translate3D(0, -8px, 0);
+  transform: translate3D(0, -8px, 0);
+}
+
+.basicInput-isInvalid {
+  .basicInput--input {
+    border-color: red;
+  }
+  .basicInput--label {
+    color: red;
+  }
+}
+
+.basicInput--helpText {
+  font-size: 0.75em;
+  line-height: 1.4286;
+  position: relative;
+  top: 1px;
+}
+
+.basicInput--helpTextEmpty {
+  display: none;
+}
+
+.basicInput--errorMessage {
+  color: red;
+}
+
+/*********************************************************************
+                        Small Breakpoint (480px - 599px)
+********************************************************************/
+@media (min-width: $sm) {
+
+}
+/*********************************************************************
+                        Medium Breakpoint (600px - 767px)
+********************************************************************/
+@media (min-width: $md) {
+
+}
+/*********************************************************************
+                        Large Breakpoint (768px - 999px)
+********************************************************************/
+@media (min-width: $lg) {
+
+}
+/*********************************************************************
+                        Extra Large Breakpoint (1000px <)
+********************************************************************/
+@media (min-width: $xl) {
+
+}

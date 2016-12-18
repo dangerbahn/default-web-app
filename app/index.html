@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DefaultEmberApp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{content-for "head"}}
+
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/default-ember-app.css">
+
+    {{content-for "head-footer"}}
+  </head>
+  <body>
+    {{content-for "body"}}
+
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/default-ember-app.js"></script>
+
+    <script>
+    var nativeData = {};
+
+    var nativeInterface = Ember.Object.extend({
+      updateValue: function(value) {
+        Ember.set(appInterface, 'nativeValue', value);
+      }
+    });
+    var appInterface = nativeInterface.create({ nativeData: nativeData });
+    Ember.set(appInterface, 'nativeValue', false);
+
+
+    </script>
+
+    {{content-for "body-footer"}}
+  </body>
+</html>

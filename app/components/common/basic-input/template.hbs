@@ -1,0 +1,30 @@
+{{#if isHidden}}
+  {{input type="hidden" id=fieldId name=name value=value}}
+{{else}}
+  <div class="basicInput--inputContainer">
+    <label class="basicInput--label" for={{fieldId}} id={{labelId}} aria-hidden="true">
+      {{label}}
+    </label>
+    <input class="basicInput--input"
+      type={{type}}
+      id={{fieldId}}
+      name={{name}}
+      required={{required}}
+      minlength={{minlength}}
+      maxlength={{maxlength }}
+      pattern={{pattern}}
+      aria-labelledby="{{labelId}}"
+      aria-describedby="{{helpTextId}}"
+      autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    >
+  </div>
+  {{#if hasHelpText}}
+    <p class="basicInput--helpText {{helpTextClass}}" role="note" id={{helpTextId}}>
+      {{#if showErrorMessage}}
+        {{errorMessage}}
+      {{else}}
+        {{helpText}}
+      {{/if}}
+    </p>
+  {{/if}}
+{{/if}}

@@ -1,0 +1,10 @@
+<button class="basicModal--closeButton" {{action "close"}}>
+  <span class="screen-reader-only">close dialog</span>
+</button>
+{{#if title}}<h2 class="basicModal--title" tabindex="0">{{title}}</h2>{{/if}}
+<div class="basicModal--content">
+  {{yield}}
+</div>
+<button class="basicModal--closeButton" {{action "close"}}>
+  <span class="screen-reader-only">close dialog</span>
+</button>

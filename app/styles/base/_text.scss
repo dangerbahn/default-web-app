@@ -1,0 +1,35 @@
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h2, h3 {
+  font-size: 1.25em;
+  margin-bottom: 0.8em;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h4, h5, h6 {
+  margin-bottom: 1em;
+}
+
+header {
+  margin-bottom: 1em;
+  h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 0;
+  }
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+small {
+  display: inherit;
+  font-size: 0.625em; // 10 / 16
+}

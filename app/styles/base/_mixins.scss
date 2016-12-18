@@ -1,0 +1,118 @@
+/* -------------------------------
+    Cleafix mixin
+------------------------------- */
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* -------------------------------
+    Breakpoint Module
+------------------------------- */
+
+@mixin bp($point) {
+  @if $point == desktop {
+    @media (min-width: 1048px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 640px) { @content; }
+  }
+}
+
+/* -------------------------------
+    Calc Mixins
+------------------------------- */
+
+@mixin calcWidth($content-width, $subtractable-width){
+  width:unquote("-moz-calc(")$content-width unquote("-")$subtractable-width unquote(")");
+  width:unquote("-o-calc(")$content-width unquote("-")$subtractable-width unquote(")");
+  width:unquote("-webkit-calc(")$content-width unquote("-")$subtractable-width unquote(")");
+  width:unquote("calc(")$content-width unquote("-")$subtractable-width unquote(")");
+}
+@mixin calcHeight($content-height, $subtractable-height){
+  height:unquote("-moz-calc(")$content-height unquote("-")$subtractable-height unquote(")");
+  height:unquote("-o-calc(")$content-height unquote("-")$subtractable-height unquote(")");
+  height:unquote("-webkit-calc(")$content-height unquote("-")$subtractable-height unquote(")");
+  height:unquote("calc(")$content-height unquote("-")$subtractable-height unquote(")");
+}
+
+/* -------------------------------
+    Vertical Align Middle Mixin
+------------------------------- */
+
+@mixin vertical-align-middle {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* -------------------------------
+    Mixin to prefix a property
+------------------------------- */
+// @param {String} $property - Property name
+// @param {*} $value - Property value
+// @param {List} $prefixes (()) - List of prefixes to print
+// usage: @include prefix(transform, rotate(45deg), webkit ms);
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+/* -------------------------------
+    Mixin to place items on a circle
+------------------------------- */
+/// @author Hugo Giraudel
+/// @author Ana Tudor
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-size - Large circle size
+/// @param {Length} $item-size - Single item size
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: absolute;
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+
+  > * {
+    display: block;
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -($item-size / 2);
+    border-radius: 50%;
+    border: solid 1px #333;
+    text-align: center;
+    line-height: 2.5em;
+    background-color: #3a3b3a;
+    color: #fff;
+    font-weight: 400;
+
+    $angle: (360 / $item-count);
+    $rot: 60;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform:
+          rotate($rot * 1deg)
+          translate($circle-size / 2)
+          rotate($rot * -1deg);
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}

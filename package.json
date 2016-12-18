@@ -1,0 +1,61 @@
+{
+  "name": "default-ember-app",
+  "version": "0.0.0",
+  "description": "a place to make things",
+  "private": true,
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "start": "ember server",
+    "test": "ember test"
+  },
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "body-parser": "^1.2.0",
+    "broccoli-asset-rev": "^2.4.2",
+    "broccoli-sass": "0.6.0",
+    "ember-ajax": "^2.0.1",        
+    "ember-cli": "2.8.0",
+    "ember-cli-app-version": "^1.0.0",
+    "ember-cli-babel": "^5.1.6",
+    "ember-cli-dependency-checker": "^1.2.0",
+    "ember-cli-htmlbars": "^1.0.3",
+    "ember-cli-htmlbars-inline-precompile": "^0.3.1",
+    "ember-cli-inject-live-reload": "^1.4.0",
+    "ember-cli-jshint": "^1.0.0",
+    "ember-cli-qunit": "^2.1.0",
+    "ember-cli-release": "^0.2.9",
+    "ember-cli-sri": "^2.1.0",
+    "ember-cli-test-loader": "^1.1.0",
+    "ember-cli-uglify": "^1.2.0",
+    "ember-data": "^2.8.0",
+    "ember-export-application-global": "^1.0.5",
+    "ember-load-initializers": "0.5.1",
+    "ember-resolver": "^2.1.0",
+    "ember-side-menu": "0.0.10",
+    "ember-websockets": "6.0.0",
+    "ember-welcome-page": "^1.0.1",
+    "express": "^4.8.5",
+    "glob": "^4.5.3",
+    "graphql-tag": "^1.1.2",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-combine-media-queries": "^1.0.19",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-exec": "^0.4.6",
+    "http-proxy": "^1.11.1",
+    "loader.js": "^4.0.1",
+    "mock-socket": "5.0.1",
+    "morgan": "^1.6.0"
+  }
+}
